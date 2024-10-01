@@ -3,7 +3,6 @@ import streamlit as st
 from bokeh.models.widgets import Button
 from bokeh.models import CustomJS
 from streamlit_bokeh_events import streamlit_bokeh_events
-from PIL import Image
 import time
 import paho.mqtt.client as paho
 import json
@@ -26,8 +25,8 @@ client1.on_message = on_message
 st.title("Interfaces Multimodales")
 st.subheader("CONTROL POR VOZ")
 
-image = Image.open('voice_ctrl.jpg')
-st.image(image, width=200)
+gif_path = os.path.join(os.path.dirname(__file__), "6oa.gif")
+st.image(gif_path, use_column_width=True)  
 
 st.write("Toca el Botón y habla ")
 
@@ -73,5 +72,4 @@ try:
 except:
     pass
 
-st.image("6oa.gif", use_column_width=True)  # Mostrar el GIF en la pantalla
 
